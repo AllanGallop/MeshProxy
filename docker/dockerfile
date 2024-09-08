@@ -1,0 +1,17 @@
+FROM alpine:latest
+
+# Install required packages
+RUN apk add --update --no-cache git python3 py3-pip
+
+# Clone the repository
+RUN git clone https://github.com/allangallop/meshproxy.git
+
+# Install Python dependencies
+RUN pip install --no-cache-dir --break-system-packages -r /meshproxy/requirements.txt
+
+# Define config volume
+VOLUME /config
+VOLUME /logs
+
+# Define the command to run
+CMD ["sh", "-c", "python3 /meshproxy/meshproxy.py"]

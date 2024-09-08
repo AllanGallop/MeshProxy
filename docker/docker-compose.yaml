@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  meshproxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ../logs:/meshproxy/logs
+      - ../config:/meshproxy/config
+    container_name: meshproxy
