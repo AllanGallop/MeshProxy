@@ -9,4 +9,6 @@ services:
     volumes:
       - ../logs:/meshproxy/logs
       - ../config:/meshproxy/config
+    ports:
+      - 4403:4403
     container_name: meshproxy

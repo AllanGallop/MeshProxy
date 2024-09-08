@@ -1,1 +1,4 @@
+# Blacklisted nodes
+# ---------------------------
+# One node per line
 #!2ef2cd6a
